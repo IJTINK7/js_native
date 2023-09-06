@@ -24,3 +24,8 @@ const array = [
     {name: "Alex"}
 ]
 console.log(array) // [ { name: 'Bob' }, { name: 'Alex' } ]
+
+// C - Create
+// R - Read
+// U - Update
+// D - Delete
