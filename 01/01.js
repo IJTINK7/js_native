@@ -29,3 +29,116 @@ console.log(array) // [ { name: 'Bob' }, { name: 'Alex' } ]
 // R - Read
 // U - Update
 // D - Delete
+
+
+
+// Работа с данными Мутабально и иммутабельно:
+
+// 1) Мутабельно
+
+const users = [
+    {
+        id: 1,
+        name: "Anna",
+        isStudent: true
+    },
+    {
+        id: 2,
+        name: "Alex",
+        isStudent: false
+    },
+    {
+        id: 3,
+        name: "Donald",
+        isStudent: true
+    },
+    {
+        id: 4,
+        name: "Mike",
+        isStudent: false
+    },
+]
+
+const newUser =  {
+    id: 5,
+    name: "Shon",
+    isStudent: true
+}
+
+users.push(newUser) // мутабельно (поменяли изначальные данные)
+console.log(users) // изначальный массив поменялся на:
+// [
+// { id: 1, name: 'Anna', isStudent: true },
+// { id: 2, name: 'Alex', isStudent: false },
+// { id: 3, name: 'Donald', isStudent: true },
+// { id: 4, name: 'Mike', isStudent: false },
+// { id: 5, name: 'Shon', isStudent: true }
+// ]
+
+
+
+// 2) Иммутабельно
+
+//струкрута  => делаем копию => вносим изменения в копию => используем копию
+
+const users2 = [
+    {
+        id: 1,
+        name: "Anna",
+        isStudent: true
+    },
+    {
+        id: 2,
+        name: "Alex",
+        isStudent: false
+    },
+    {
+        id: 3,
+        name: "Donald",
+        isStudent: true
+    },
+    {
+        id: 4,
+        name: "Mike",
+        isStudent: false
+    },
+]
+
+ // Данный вариант устарел
+const copyUsers = [];
+for (let i = 0; i < users2.length; i++){
+    copyUsers.push(users2[i])
+}
+copyUsers.push(newUser)
+console.log(copyUsers)
+
+console.log(users2 === copyUsers) // false
+
+// Поэтому используется spread оператор ...
+
+const users3 = [
+    {
+        id: 1,
+        name: "Anna",
+        isStudent: true
+    },
+    {
+        id: 2,
+        name: "Alex",
+        isStudent: false
+    },
+    {
+        id: 3,
+        name: "Donald",
+        isStudent: true
+    },
+    {
+        id: 4,
+        name: "Mike",
+        isStudent: false
+    },
+]
+
+copyUsers2 = [...users3, newUser]
+console.log(copyUsers)
+console.log(users3 === copyUsers2) // false - разные массивы
