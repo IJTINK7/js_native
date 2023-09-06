@@ -10,3 +10,17 @@
 //      7) symbol
 //  Ссылочный:
 //      1) object (objects, arrays, functions, etc.)
+
+const num = 3
+const num2 = num
+console.log(num) // 3
+console.log(num2) // 3
+
+const user = {
+    name: "Bob"
+}
+const array = [
+    user,
+    {name: "Alex"}
+]
+console.log(array) // [ { name: 'Bob' }, { name: 'Alex' } ]
