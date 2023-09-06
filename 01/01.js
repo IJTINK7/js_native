@@ -142,3 +142,36 @@ const users3 = [
 copyUsers2 = [...users3, newUser]
 console.log(copyUsers)
 console.log(users3 === copyUsers2) // false - разные массивы
+
+const user4 = {
+    name: 'John Doe',
+    age: 30,
+    isStudent: false,
+    hobbies: ['reading', 'painting', 'swimming'],
+    address: {
+        street: '123 Main St',
+        city: 'New York',
+        country: 'USA'
+    },
+    education: {
+        degree: 'Bachelor',
+        major: 'Computer Science',
+        university: {
+            name: 'ABC University',
+            location: 'XYZ City'
+        }
+    }
+};
+console.log(user4.education.university.location)
+console.log(user4.hobbies[2])
+
+console.log(user4.name)
+console.log(user4["name"])
+
+console.log(user4.address.city)
+
+// const copyUser4 = {...user4, age: 31, address: {...user4.address, street: '157 West St'}}
+// console.log(copyUser4)
+// console.log(user4 === copyUser4)
+
+
