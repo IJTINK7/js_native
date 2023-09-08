@@ -170,8 +170,10 @@ console.log(user4["name"])
 
 console.log(user4.address.city)
 
-// const copyUser4 = {...user4, age: 31, address: {...user4.address, street: '157 West St'}}
-// console.log(copyUser4)
-// console.log(user4 === copyUser4)
+const copyUser4 = {...user4, age: 31, address: {...user4.address, street: '157 West St'}}
+const copyUser5 = {...user4, education: {university: {...user4.education.university, location: 'EFG City'}}}
+console.log(copyUser4)
+console.log(user4.age === copyUser4.age)
+console.log(copyUser5)
 
 
