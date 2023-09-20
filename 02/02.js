@@ -26,82 +26,82 @@ const users = [
 ]
 
 
-// MAP
-
-// Custom "map" arrays method
-const getNames = (array) => {
-    const newArray = []
-    for (let i = 0; i < array.length; i++) {
-        newArray.push(array[i].name)
-    }
-    return newArray
-}
-console.log(getNames(users))
-
-const addScores = (array) => {
-    const result = []
-    const getNewScoresForResult = (el) => ({...el, scores: +el.scores + 5})
-    for (let i = 0; i < array.length; i++) {
-        result[i] = getNewScoresForResult(array[i])
-    }
-    return result
-}
-console.log(addScores(users))
-
-const getMappedArray = (array, mapFunction) => {
-    const result = []
-    for (let i = 0; i < array.length; i++) {
-        result[i] = mapFunction(array[i])
-    }
-    return result
-}
-console.log(getMappedArray(users, el => ({...el, isStudent: !el.isStudent})))
-console.log(getMappedArray(users, el => ({...el, scores: el.scores + 7})))
-console.log(getMappedArray(users, el => ({...el, name: "Name: " + el.name})))
-
-// using "map" arrays method
-console.log(users.map(el => ({...el, scores: el.scores + 7})))
-
-
-// FILTER
-
-const getFilteredArray = (array) => {
-    const result = []
-    for (let i = 0; i < array.length; i++) {
-        if (array[i].scores > 80) {
-            result.push(array[i])
-        }
-    }
-    return result
-}
-
-console.log(getFilteredArray(users))
-
-
-const getFilteredArray2 = (array, filterFunction) => {
-    const result = []
-    for (let i = 0; i < array.length; i++) {
-        if (filterFunction(array[i]) === true) {
-            result.push(array[i])
-        }
-    }
-    return result
-}
-console.log(getFilteredArray2(users, el => el.scores > 30))
-
-// FIND
-
-const findElement = (array, findFunction) => {
-    for (let i = 0; i < array.length; i++) {
-        if (findFunction(array[i]) === true) {
-            return array[i]
-        }
-    }
-    return array
-}
-
-console.log(findElement(users, el => el.name === "Donald"))
-console.log(findElement(users, el => el.name === "Roma"))
+// // MAP
+//
+// // Custom "map" arrays method
+// const getNames = (array) => {
+//     const newArray = []
+//     for (let i = 0; i < array.length; i++) {
+//         newArray.push(array[i].name)
+//     }
+//     return newArray
+// }
+// console.log(getNames(users))
+//
+// const addScores = (array) => {
+//     const result = []
+//     const getNewScoresForResult = (el) => ({...el, scores: +el.scores + 5})
+//     for (let i = 0; i < array.length; i++) {
+//         result[i] = getNewScoresForResult(array[i])
+//     }
+//     return result
+// }
+// console.log(addScores(users))
+//
+// const getMappedArray = (array, mapFunction) => {
+//     const result = []
+//     for (let i = 0; i < array.length; i++) {
+//         result[i] = mapFunction(array[i])
+//     }
+//     return result
+// }
+// console.log(getMappedArray(users, el => ({...el, isStudent: !el.isStudent})))
+// console.log(getMappedArray(users, el => ({...el, scores: el.scores + 7})))
+// console.log(getMappedArray(users, el => ({...el, name: "Name: " + el.name})))
+//
+// // using "map" arrays method
+// console.log(users.map(el => ({...el, scores: el.scores + 7})))
+//
+//
+// // FILTER
+//
+// const getFilteredArray = (array) => {
+//     const result = []
+//     for (let i = 0; i < array.length; i++) {
+//         if (array[i].scores > 80) {
+//             result.push(array[i])
+//         }
+//     }
+//     return result
+// }
+//
+// console.log(getFilteredArray(users))
+//
+//
+// const getFilteredArray2 = (array, filterFunction) => {
+//     const result = []
+//     for (let i = 0; i < array.length; i++) {
+//         if (filterFunction(array[i]) === true) {
+//             result.push(array[i])
+//         }
+//     }
+//     return result
+// }
+// console.log(getFilteredArray2(users, el => el.scores > 30))
+//
+// // FIND
+//
+// const findElement = (array, findFunction) => {
+//     for (let i = 0; i < array.length; i++) {
+//         if (findFunction(array[i]) === true) {
+//             return array[i]
+//         }
+//     }
+//     return array
+// }
+//
+// console.log(findElement(users, el => el.name === "Donald"))
+// console.log(findElement(users, el => el.name === "Roma"))
 
 // PUSH
 //
@@ -123,8 +123,22 @@ console.log(findElement(users, el => el.name === "Roma"))
 
 // UNSHIFT
 
-const createCustomUnshiftMethod = (array, newItem) => {
-    return [newItem, ...array]
-}
+// const createCustomUnshiftMethod = (array, newItem) => {
+//     return [newItem, ...array]
+// }
+//
+// console.log(createCustomUnshiftMethod(users, {id: 5, name: "Roma", isStudent: false, scores: 99}))
+//
 
-console.log(createCustomUnshiftMethod(users, {id: 5, name: "Roma", isStudent: false, scores: 99}))
+
+// SHIFT
+const createCustomShiftMethod = (array) => {
+    const newArray = []
+    for( let i = 0; i < array.length; i++){
+        if(i !== 0){
+            newArray.push(array[i])
+        }
+    }
+    return newArray
+}
+console.log(createCustomShiftMethod(users))
