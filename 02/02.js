@@ -121,10 +121,10 @@ console.log(findElement(users, el => el.name === "Roma"))
 //
 // console.log(createCustomPopMethod(users))
 
-// SHIFT
+// UNSHIFT
 
-const createCustomShiftMethod = (array, newItem) => {
+const createCustomUnshiftMethod = (array, newItem) => {
     return [newItem, ...array]
 }
 
-console.log(createCustomShiftMethod(users, {id: 5, name: "Roma", isStudent: false, scores: 99}))
+console.log(createCustomUnshiftMethod(users, {id: 5, name: "Roma", isStudent: false, scores: 99}))
