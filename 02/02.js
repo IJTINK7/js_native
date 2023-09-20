@@ -71,3 +71,14 @@ const getFilteredArray = (array) =>{
 }
 
 console.log(getFilteredArray(users))
+
+const getFilteredArray2 = (array, filterFunction) =>{
+    const result = []
+    for(let i = 0; i < array.length; i++){
+        if(filterFunction(array[i]) === true){
+            result.push(array[i])
+        }
+    }
+    return result
+}
+console.log(getFilteredArray2(users, el=> el.scores > 30))
