@@ -2,22 +2,26 @@ const users = [
     {
         id: 1,
         name: "Anna",
-        isStudent: true
+        isStudent: true,
+        scores: 85
     },
     {
         id: 2,
         name: "Alex",
-        isStudent: false
+        isStudent: false,
+        scores: 90
     },
     {
         id: 3,
         name: "Donald",
-        isStudent: true
+        isStudent: true,
+        scores: 77
     },
     {
         id: 4,
         name: "Mike",
-        isStudent: false
+        isStudent: false,
+        scores: 83
     },
 ]
 
@@ -31,3 +35,13 @@ const getNames = (array) => {
     return newArray
 }
 console.log(getNames(users))
+
+const addScores = (array) =>{
+    const result = []
+    const getNewScoresForResult = (el)=>({...el, scores: + el.scores + 5 })
+    for(let i = 0; i < array.length; i++){
+        result[i] = getNewScoresForResult(array[i])
+    }
+    return result
+}
+console.log(addScores(users))
