@@ -56,3 +56,6 @@ const getMappedArray = (array, mapFunction) =>{
 console.log(getMappedArray(users, el=> ({...el, isStudent: !el.isStudent})))
 console.log(getMappedArray(users, el=> ({...el, scores: el.scores + 7})))
 console.log(getMappedArray(users, el=> ({...el, name: "Name: " + el.name})))
+
+// using "map" arrays method
+console.log(users.map(el=>({...el, scores: el.scores +7})))
