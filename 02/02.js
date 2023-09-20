@@ -45,3 +45,14 @@ const addScores = (array) =>{
     return result
 }
 console.log(addScores(users))
+
+const getMappedArray = (array, mapFunction) =>{
+    const result = []
+    for(let i = 0; i < array.length; i++){
+        result[i] = mapFunction(array[i])
+    }
+    return result
+}
+console.log(getMappedArray(users, el=> ({...el, isStudent: !el.isStudent})))
+console.log(getMappedArray(users, el=> ({...el, scores: el.scores + 7})))
+console.log(getMappedArray(users, el=> ({...el, name: "Name: " + el.name})))
