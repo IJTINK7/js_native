@@ -25,8 +25,10 @@ const users = [
     },
 ]
 
-// Custom "map" arrays method
 
+// MAP
+
+// Custom "map" arrays method
 const getNames = (array) => {
     const newArray = []
     for(let i = 0; i < array.length; i++){
@@ -61,6 +63,7 @@ console.log(getMappedArray(users, el=> ({...el, name: "Name: " + el.name})))
 console.log(users.map(el=>({...el, scores: el.scores +7})))
 
 
+// FILTER
 
 const getFilteredArray = (array) =>{
     const result = []
@@ -87,7 +90,7 @@ const getFilteredArray2 = (array, filterFunction) =>{
 }
 console.log(getFilteredArray2(users, el=> el.scores > 30))
 
-
+// FIND
 
 const findElement = (array, findFunction) => {
     for(let i = 0; i < array.length; i++){
@@ -100,3 +103,12 @@ const findElement = (array, findFunction) => {
 
 console.log(findElement(users, el=>el.name === "Donald"))
 console.log(findElement(users, el=>el.name === "Roma"))
+
+// PUSH
+
+const createCustomPushMethod = (array, newItem) => {
+    array[array.length] = newItem
+    return array
+}
+
+console.log(createCustomPushMethod(users, {id: 5, name: "Mike", isStudent: false, scores: 99}))
