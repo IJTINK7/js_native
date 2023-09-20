@@ -60,6 +60,8 @@ console.log(getMappedArray(users, el=> ({...el, name: "Name: " + el.name})))
 // using "map" arrays method
 console.log(users.map(el=>({...el, scores: el.scores +7})))
 
+
+
 const getFilteredArray = (array) =>{
     const result = []
     for(let i = 0; i < array.length; i++){
@@ -72,6 +74,8 @@ const getFilteredArray = (array) =>{
 
 console.log(getFilteredArray(users))
 
+
+
 const getFilteredArray2 = (array, filterFunction) =>{
     const result = []
     for(let i = 0; i < array.length; i++){
@@ -82,3 +86,15 @@ const getFilteredArray2 = (array, filterFunction) =>{
     return result
 }
 console.log(getFilteredArray2(users, el=> el.scores > 30))
+
+
+
+const findElement = (array, findFunction) => {
+    for(let i = 0; i < array.length; i++){
+        if(findFunction(array[i]) === true){
+            return array[i]
+        }
+    }
+}
+
+console.log(findElement(users, el=>el.name === "Donald"))
