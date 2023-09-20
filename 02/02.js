@@ -95,6 +95,8 @@ const findElement = (array, findFunction) => {
             return array[i]
         }
     }
+    return array
 }
 
 console.log(findElement(users, el=>el.name === "Donald"))
+console.log(findElement(users, el=>el.name === "Roma"))
