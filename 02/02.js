@@ -110,13 +110,21 @@ console.log(findElement(users, el => el.name === "Roma"))
 //     return array
 // }
 //
-// console.log(createCustomPushMethod(users, {id: 5, name: "Mike", isStudent: false, scores: 99}))
+// console.log(createCustomPushMethod(users, {id: 5, name: "Roma", isStudent: false, scores: 99}))
 
 // POP
 
-const createCustomPopMethod = (array) => {
-    array.length = array.length - 1
-    return array
+// const createCustomPopMethod = (array) => {
+//     array.length = array.length - 1
+//     return array
+// }
+//
+// console.log(createCustomPopMethod(users))
+
+// SHIFT
+
+const createCustomShiftMethod = (array, newItem) => {
+    return [newItem, ...array]
 }
 
-console.log(createCustomPopMethod(users))
+console.log(createCustomShiftMethod(users, {id: 5, name: "Roma", isStudent: false, scores: 99}))
