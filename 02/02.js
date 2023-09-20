@@ -3,13 +3,13 @@ const users = [
         id: 1,
         name: "Anna",
         isStudent: true,
-        scores: 85
+        scores: 17
     },
     {
         id: 2,
         name: "Alex",
         isStudent: false,
-        scores: 90
+        scores: 80
     },
     {
         id: 3,
@@ -59,3 +59,15 @@ console.log(getMappedArray(users, el=> ({...el, name: "Name: " + el.name})))
 
 // using "map" arrays method
 console.log(users.map(el=>({...el, scores: el.scores +7})))
+
+const getFilteredArray = (array) =>{
+    const result = []
+    for(let i = 0; i < array.length; i++){
+        if(array[i].scores > 80){
+            result.push(array[i])
+        }
+    }
+    return result
+}
+
+console.log(getFilteredArray(users))
