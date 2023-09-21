@@ -155,19 +155,6 @@ const users = [
 //
 // console.log(createCustomReverseMethod(users))
 
-// SLICE ???
-// const nums = [1,2,3,4,5,6,7,8,9]
-// const createCustomSliceMethod = (array, firstItem = 0, lastItem = array.length) => {
-//     const newArray = []
-//      for( let i = firstItem; i < lastItem; i++){
-//         newArray[i - firstItem] = array[i];
-//     }
-//     return newArray
-// }
-//
-// console.log(createCustomSliceMethod(nums, 3));
-// console.log(createCustomSliceMethod(users, 3))
-// console.log(createCustomSliceMethod(users, 3,4))
 
 // INCLUDES
 
@@ -187,4 +174,17 @@ console.log(createCustomIncludesMethod(nums, 0));
 console.log(createCustomIncludesMethod(nums, 1, -4))
 console.log(createCustomIncludesMethod(nums, 2, -5))
 
+// SLICE ???
+// const nums = [1,2,3,4,5,6,7,8,9]
+// const createCustomSliceMethod = (array, firstItem = 0, lastItem = array.length) => {
+//     const newArray = []
+//      for( let i = firstItem; i < lastItem; i++){
+//         newArray[i - firstItem] = array[i];
+//     }
+//     return newArray
+// }
+//
+// console.log(createCustomSliceMethod(nums, 3));
+// console.log(createCustomSliceMethod(users, 3))
+// console.log(createCustomSliceMethod(users, 3,4))
 
