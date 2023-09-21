@@ -143,14 +143,48 @@ const users = [
 // }
 // console.log(createCustomShiftMethod(users))
 
-// REVERSE
+// // REVERSE
+//
+// const createCustomReverseMethod = (array) => {
+//     const newArray = []
+//     for( let i = array.length - 1; i >= 0; i--){
+//         newArray.push(array[i]);
+//     }
+//     return newArray
+// }
+//
+// console.log(createCustomReverseMethod(users))
 
-const createCustomReverseMethod = (array) => {
-    const newArray = []
-    for( let i = array.length - 1; i >= 0; i--){
-        newArray.push(array[i]);
-    }
-    return newArray
+// SLICE ???
+// const nums = [1,2,3,4,5,6,7,8,9]
+// const createCustomSliceMethod = (array, firstItem = 0, lastItem = array.length) => {
+//     const newArray = []
+//      for( let i = firstItem; i < lastItem; i++){
+//         newArray[i - firstItem] = array[i];
+//     }
+//     return newArray
+// }
+//
+// console.log(createCustomSliceMethod(nums, 3));
+// console.log(createCustomSliceMethod(users, 3))
+// console.log(createCustomSliceMethod(users, 3,4))
+
+// INCLUDES
+
+const nums = [1,2,3,4,5]
+const createCustomIncludesMethod = (array, el, startIndex = 0) => {
+    const start = startIndex < 0 ? array.length + startIndex : startIndex
+     for(let i = start; i < array.length; i++){
+      if(el === array[i]){
+          return true
+      }
+     }
+     return false
 }
 
-console.log(createCustomReverseMethod(users))
+console.log(createCustomIncludesMethod(nums, 3));
+console.log(createCustomIncludesMethod(nums, 0));
+console.log(createCustomIncludesMethod(nums, 1, -4))
+console.log(createCustomIncludesMethod(nums, 2, -5))
+
+
