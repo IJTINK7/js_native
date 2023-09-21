@@ -132,13 +132,25 @@ const users = [
 
 
 // SHIFT
-const createCustomShiftMethod = (array) => {
+// const createCustomShiftMethod = (array) => {
+//     const newArray = []
+//     for( let i = 0; i < array.length; i++){
+//         if(i !== 0){
+//             newArray.push(array[i])
+//         }
+//     }
+//     return newArray
+// }
+// console.log(createCustomShiftMethod(users))
+
+// REVERSE
+
+const createCustomReverseMethod = (array) => {
     const newArray = []
-    for( let i = 0; i < array.length; i++){
-        if(i !== 0){
-            newArray.push(array[i])
-        }
+    for( let i = array.length - 1; i >= 0; i--){
+        newArray.push(array[i]);
     }
     return newArray
 }
-console.log(createCustomShiftMethod(users))
+
+console.log(createCustomReverseMethod(users))
