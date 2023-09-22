@@ -20,13 +20,13 @@ const getSmallHandler = () => {
 const getMediumHandler = () => {
     alert("Medium!")
 }
-const getBigHandler = () => {
-    alert("Big!")
+const getBigHandler = (e) => {
+    console.log(e.target.id)
 }
 // const anonymous = () => getSmallHandler("Hello")
 // small.onclick = anonymous
 //
 // small.onclick = null
-small.addEventListener("click",getSmallHandler, {once: true} )
-medium.addEventListener("click",getMediumHandler, {capture: true})
+small.addEventListener("click",getBigHandler)
+medium.addEventListener("click",getBigHandler)
 big.addEventListener("click",getBigHandler)
