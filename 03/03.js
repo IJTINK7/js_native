@@ -27,6 +27,6 @@ const getBigHandler = () => {
 // small.onclick = anonymous
 //
 // small.onclick = null
-small.addEventListener("click",getSmallHandler)
-medium.addEventListener("click",getMediumHandler)
+small.addEventListener("click",getSmallHandler, {once: true} )
+medium.addEventListener("click",getMediumHandler, {capture: true})
 big.addEventListener("click",getBigHandler)
