@@ -42,9 +42,8 @@ const getMediumHandler = () => {
     alert("Medium!")
 }
 const getBigHandler = (e) => {
-    if(e.target.tagName === "BUTTON"){
-        console.log(e.target.id)
-    }
+   e.stopPropagation()
+    console.log(e.currentTarget.id)
 }
 // const anonymous = () => getSmallHandler("Hello")
 // small.onclick = anonymous
@@ -56,3 +55,5 @@ const getBigHandler = (e) => {
 // big.addEventListener("click", getBigHandler, {capture: false})
 
 small.addEventListener("click", getBigHandler)
+medium.addEventListener("click", getBigHandler)
+big.addEventListener("click", getBigHandler)
