@@ -57,3 +57,9 @@ const getBigHandler = (e) => {
 small.addEventListener("click", getBigHandler)
 medium.addEventListener("click", getBigHandler)
 big.addEventListener("click", getBigHandler)
+
+const a = document.getElementById("a")
+a.addEventListener("click", (e)=>{
+    e.preventDefault()
+    alert("HELLO!!!!!")
+})
