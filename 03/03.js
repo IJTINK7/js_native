@@ -42,7 +42,7 @@ const getMediumHandler = () => {
     alert("Medium!")
 }
 const getBigHandler = (e) => {
-   e.stopPropagation()
+    e.stopPropagation()
     console.log(e.currentTarget.id)
 }
 // const anonymous = () => getSmallHandler("Hello")
