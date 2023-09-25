@@ -34,6 +34,7 @@
 const small = document.getElementById("small")
 const medium = document.getElementById("medium")
 const big = document.getElementById("big")
+
 const getSmallHandler = () => {
     alert("Small!")
 }
@@ -47,6 +48,7 @@ const getBigHandler = (e) => {
 // small.onclick = anonymous
 //
 // small.onclick = null
-small.addEventListener("click",getBigHandler)
-medium.addEventListener("click",getBigHandler)
-big.addEventListener("click",getBigHandler)
+
+small.addEventListener("click", getBigHandler, {capture: false})
+medium.addEventListener("click", getBigHandler, {capture: false})
+big.addEventListener("click", getBigHandler, {capture: false})
