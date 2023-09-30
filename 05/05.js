@@ -40,3 +40,45 @@ console.log(numbers.sort(shortCompareFunction)) // [ 9, 22, 100, 777 ]
 
 // 7) Отсортировать массив в противоположном направлении
 console.log(numbers.reverse()) // [ 777, 100, 22, 9 ]
+
+// 8) Сортировка массива по числовым значениям
+
+const users = [
+    {
+        id: 1,
+        name: "Anna",
+        age: 22,
+        isStudent: true,
+        scores: 17
+    },
+    {
+        id: 2,
+        name: "Alex",
+        age: 27,
+        isStudent: false,
+        scores: 80
+    },
+    {
+        id: 3,
+        name: "Donald",
+        age: 20,
+        isStudent: true,
+        scores: 77
+    },
+    {
+        id: 4,
+        name: "Mike",
+        age: 33,
+        isStudent: false,
+        scores: 83
+    },
+]
+
+console.log(users.sort((a,b)=> a.age - b.age))
+//[
+//   { id: 3, name: 'Donald', age: 20, isStudent: true, scores: 77 },
+//   { id: 1, name: 'Anna', age: 22, isStudent: true, scores: 17 },
+//   { id: 2, name: 'Alex', age: 27, isStudent: false, scores: 80 },
+//   { id: 4, name: 'Mike', age: 33, isStudent: false, scores: 83 }
+// ]
+// Возраст по порядку стоит
