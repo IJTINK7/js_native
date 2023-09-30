@@ -33,3 +33,7 @@ const compareFunction = (a,b) => {
     }
 }
 console.log(numbers.sort(compareFunction)) // [ 9, 22, 100, 777 ]
+
+const shortCompareFunction = (a, b) => a - b
+console.log(numbers.sort(shortCompareFunction)) // [ 9, 22, 100, 777 ]
+
