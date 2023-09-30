@@ -21,6 +21,7 @@ console.log(names) // [ 'Alex', 'Bob', 'Donald', 'Roma' ]
 console.log(names === names.sort()) // true
 
 // 5) Числа без доп. параметров не сортирует, а воспринимает числа как строки и сортирует "по алфавиту"
+
 const numbers = [100,9,22,777]
 console.log(numbers.sort()) // [ 100, 22, 777, 9 ]
 
@@ -37,3 +38,5 @@ console.log(numbers.sort(compareFunction)) // [ 9, 22, 100, 777 ]
 const shortCompareFunction = (a, b) => a - b
 console.log(numbers.sort(shortCompareFunction)) // [ 9, 22, 100, 777 ]
 
+// 7) Отсортировать массив в противоположном направлении
+console.log(numbers.reverse()) // [ 777, 100, 22, 9 ]
