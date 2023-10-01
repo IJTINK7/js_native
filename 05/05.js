@@ -117,9 +117,11 @@ for (let j = 0; j < numbers.length -1; j++) {
     for (let i = 0; i < numbers.length - 1 - j; i++) {
         if(numbers[i] > numbers[i + 1]){
             isSorted = false
-            const temp = numbers[i]
-            numbers[i] = numbers[i + 1]
-            numbers[i + 1] = temp
+            // const temp = numbers[i]
+            // numbers[i] = numbers[i + 1]
+            // numbers[i + 1] = temp // Заменяем данные три строки через деструктуризацию ниже
+                
+            [numbers[i + 1], numbers[i]] = [numbers[i], numbers[i + 1]] // Сейчас сортировка не работает !!!
         }
         count++
     }
@@ -127,4 +129,5 @@ for (let j = 0; j < numbers.length -1; j++) {
 }
 console.log(numbers)
 console.log(count) // 42 итерации - Так как первые числа были рандомно упорядочены
+
 
