@@ -110,8 +110,8 @@ console.log(users2.sort((a,b)=>a.name.localeCompare(b.name))) // Первый о
 // 10) Сортировка пузырьком
 
 const numbers = [23,67,56,34,99] // По возрастанию
-for (let j = 0; j < numbers.length; j++) {
-    for (let i = 0; i < numbers.length; i++) {
+for (let j = 0; j < numbers.length - 1; j++) {
+    for (let i = 0; i < numbers.length - 1 - j; i++) {
         if(numbers[i] > numbers[i + 1]){
             const temp = numbers[i]
             numbers[i] = numbers[i + 1]
