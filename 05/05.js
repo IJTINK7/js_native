@@ -111,18 +111,19 @@ console.log(users2.sort((a,b)=>a.name.localeCompare(b.name))) // Первый о
 
 const numbers = [23,67,56,34,99,12,7,85,54,77,21,78] // По возрастанию
 let count = 0;
-for (let j = 0; j < numbers.length - 1; j++) {
+for (let j = 0; j < numbers.length; j++) {
     count++
-    let isSorted = true
-    for (let i = 0; i < numbers.length - 1 - j; i++) {
+    // let isSorted = true
+    for (let i = 0; i < numbers.length; i++) {
         if(numbers[i] > numbers[i + 1]){
-            isSorted = false
+            // isSorted = false
             const temp = numbers[i]
             numbers[i] = numbers[i + 1]
             numbers[i + 1] = temp
         }
+        count++
     }
-    if(isSorted)break
+    // if(isSorted)break
 }
 console.log(numbers)
 console.log(count)
