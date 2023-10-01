@@ -5,7 +5,7 @@
 const names = ["Roma", "Bob", "Alex", "Donald"]
 console.log(names.sort()) // [ 'Alex', 'Bob', 'Donald', 'Roma' ]
 
-// 2) Сортирует строки по unidode "из коробки", т.е. без доп. параметров
+// 2) Сортирует строки по "unicode" "из коробки", т.е. без доп. параметров
 // цифры
 // лат алфавит (заглавные)
 // лат алфавит (строчные)
@@ -22,24 +22,24 @@ console.log(names === names.sort()) // true
 
 // 5) Числа без доп. параметров не сортирует, а воспринимает числа как строки и сортирует "по алфавиту"
 
-const numbers = [100,9,22,777]
-console.log(numbers.sort()) // [ 100, 22, 777, 9 ]
+// const numbers = [100,9,22,777]
+// console.log(numbers.sort()) // [ 100, 22, 777, 9 ]
 
 // 6) Для остальных случаев необходимо параметром передавать функцию сравнения
-const compareFunction = (a,b) => {
-    if(a <= b){
-        return -1 // надо вернуть любое отрицательное число, если местами их менять НЕ надо
-    } else {
-        return 1 // надо вернуть любое положительное число, если местами их менять НАДО
-    }
-}
-console.log(numbers.sort(compareFunction)) // [ 9, 22, 100, 777 ]
+// const compareFunction = (a,b) => {
+//     if(a <= b){
+//         return -1 // надо вернуть любое отрицательное число, если местами их менять НЕ надо
+//     } else {
+//         return 1 // надо вернуть любое положительное число, если местами их менять НАДО
+//     }
+// }
+// console.log(numbers.sort(compareFunction)) // [ 9, 22, 100, 777 ]
 
-const shortCompareFunction = (a, b) => a - b
-console.log(numbers.sort(shortCompareFunction)) // [ 9, 22, 100, 777 ]
+// const shortCompareFunction = (a, b) => a - b
+// console.log(numbers.sort(shortCompareFunction)) // [ 9, 22, 100, 777 ]
 
 // 7) Отсортировать массив в противоположном направлении
-console.log(numbers.reverse()) // [ 777, 100, 22, 9 ]
+// console.log(numbers.reverse()) // [ 777, 100, 22, 9 ]
 
 // 8) Сортировка массива по числовым значениям
 
@@ -106,4 +106,18 @@ console.log(users2.sort((a,b)=>a.name.localeCompare(b.name))) // Первый о
     //  { id: 4, name: 'AMike', age: 33, isStudent: false, scores: 83 },
     //  { id: 1, name: 'Anna', age: 22, isStudent: true, scores: 17 }
     // ]
+
+// 10) Сортировка пузырьком
+
+const numbers = [23,67,56,34,99] // По возрастанию
+for (let j = 0; j < numbers.length; j++) {
+    for (let i = 0; i < numbers.length; i++) {
+        if(numbers[i] > numbers[i + 1]){
+            const temp = numbers[i]
+            numbers[i] = numbers[i + 1]
+            numbers[i + 1] = temp
+        }
+    }
+}
+console.log(numbers)
 
