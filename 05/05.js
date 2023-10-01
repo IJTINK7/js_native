@@ -114,7 +114,7 @@ let count = 0;
 for (let j = 0; j < numbers.length -1; j++) {
     count++
     // let isSorted = true
-    for (let i = 0; i < numbers.length - 1; i++) {
+    for (let i = 0; i < numbers.length - 1 - j; i++) {
         if(numbers[i] > numbers[i + 1]){
             // isSorted = false
             const temp = numbers[i]
@@ -126,5 +126,5 @@ for (let j = 0; j < numbers.length -1; j++) {
     // if(isSorted)break
 }
 console.log(numbers)
-console.log(count) // 132
+console.log(count) // 77
 
