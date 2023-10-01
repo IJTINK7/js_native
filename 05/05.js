@@ -82,3 +82,14 @@ console.log(users.sort((a,b)=> a.age - b.age))
 //   { id: 4, name: 'Mike', age: 33, isStudent: false, scores: 83 }
 // ]
 // Возраст по порядку стоит
+
+
+// 9) Сортировка массива объектов по строковым значениям
+console.log(users.sort((a,b)=>a.name.localeCompare(b.name))) // Возвращает 1 или -1 в зависимости от большего значения сравниваемых символов
+// При этом стоит учитывать, что функция localeCompare регистронезависимая
+//[
+//   { id: 2, name: 'Alex', age: 27, isStudent: false, scores: 80 },
+//   { id: 1, name: 'Anna', age: 22, isStudent: true, scores: 17 },
+//   { id: 3, name: 'Donald', age: 20, isStudent: true, scores: 77 },
+//   { id: 4, name: 'Mike', age: 33, isStudent: false, scores: 83 }
+// ]
