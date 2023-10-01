@@ -93,3 +93,17 @@ console.log(users.sort((a,b)=>a.name.localeCompare(b.name))) // Возвраща
 //   { id: 3, name: 'Donald', age: 20, isStudent: true, scores: 77 },
 //   { id: 4, name: 'Mike', age: 33, isStudent: false, scores: 83 }
 // ]
+const users2 = [
+    { id: 1, name: 'Anna', age: 22, isStudent: true, scores: 17 },
+    { id: 2, name: 'Alex', age: 27, isStudent: false, scores: 80 },
+    { id: 3, name: 'AaDonald', age: 20, isStudent: true, scores: 77 },
+    { id: 4, name: 'AMike', age: 33, isStudent: false, scores: 83 }
+]
+console.log(users2.sort((a,b)=>a.name.localeCompare(b.name))) // Первый объект с Аа, т.к. всё  один регистр приводится, к примеру АА... AL... AM... AN...
+    // [
+    //  { id: 3, name: 'AaDonald', age: 20, isStudent: true, scores: 77 },
+    //  { id: 2, name: 'Alex', age: 27, isStudent: false, scores: 80 },
+    //  { id: 4, name: 'AMike', age: 33, isStudent: false, scores: 83 },
+    //  { id: 1, name: 'Anna', age: 22, isStudent: true, scores: 17 }
+    // ]
+
