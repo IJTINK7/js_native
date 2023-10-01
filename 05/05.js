@@ -109,7 +109,7 @@ console.log(users2.sort((a,b)=>a.name.localeCompare(b.name))) // Первый о
 
 // 10) Сортировка пузырьком
 
-const numbers = [23,67,56,34,99,12,7,85,54,77,21,78] // По возрастанию
+const numbers = [7,12,21,23,67,56,34,85,54,77,78,99] // По возрастанию
 let count = 0;
 for (let j = 0; j < numbers.length -1; j++) {
     count++
@@ -126,5 +126,5 @@ for (let j = 0; j < numbers.length -1; j++) {
     if(isSorted)break
 }
 console.log(numbers)
-console.log(count) // 72
+console.log(count) // 42 итерации - Так как первые числа были рандомно упорядочены
 
