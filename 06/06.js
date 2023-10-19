@@ -97,7 +97,7 @@ let bestStudents = deepCopyStudents.filter(el=> el.scores >= 100 );
 console.log(bestStudents)
 
 //6. Сформируйте массив имён студентов (map)
-let studentsNames;
+let studentsNames = deepCopyStudents.map(el=> el.name);
 console.log(studentsNames)
 
 //7. Добавьте всем студентам свойство "isStudent" со значением true (map)
