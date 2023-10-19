@@ -83,7 +83,7 @@ const superUser = {
 let deepCopyUser = {...user, friends: [...user.friends]};
 
 //2. Создайте полную (глубокую) массива students
-let deepCopyStudents;
+let deepCopyStudents = students.map(el=>({...el}));
 
 //3. Создайте полную (глубокую) копию объекта superUser
 let deepCopySuperUser;
