@@ -86,7 +86,7 @@ let deepCopyUser = {...user, friends: [...user.friends]};
 let deepCopyStudents = students.map(el=>({...el}));
 
 //3. Создайте полную (глубокую) копию объекта superUser
-let deepCopySuperUser;
+let deepCopySuperUser = {... superUser, friends: superUser.friends.map(el=>({...el}))};
 
 //4. Отсортируйте deepCopyStudents по успеваемости (лучший идёт первым)(sort)
 let sortedByScores;
