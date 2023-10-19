@@ -89,11 +89,11 @@ let deepCopyStudents = students.map(el=>({...el}));
 let deepCopySuperUser = {... superUser, friends: superUser.friends.map(el=>({...el}))};
 
 //4. Отсортируйте deepCopyStudents по успеваемости (лучший идёт первым)(sort)
-let sortedByScores;
+let sortedByScores = deepCopyStudents.sort((a,b)=>b.scores - a.scores)
 console.log(sortedByScores);
 
 //5. Сформируйте массив студентов, у которых 100 и более баллов (filter)
-let  bestStudents;
+let bestStudents;
 console.log(bestStudents)
 
 //6. Сформируйте массив имён студентов (map)
