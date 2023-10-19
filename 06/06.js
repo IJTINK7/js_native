@@ -110,22 +110,11 @@ let studentsWithMarriedNick = deepCopyStudents.map(el=> el.name === "Nick" ? {..
 console.log(studentsWithMarriedNick)
 
 // Внесите  следующие изменения в объект superUser:
+
 //9.Удалите объект с id=1 из массива  friends
-let superUserCorrect1;
+let superUserCorrect1 = {...superUser, friends: superUser.friends.filter(el => el.id !== 1)}
 
-//10. поменяйте объекту с id=2 из массива  friends значение св-ва name на
-// "Donald"
-let superUserCorrect2;
 
-//11. добавьте в список друзей нового друга
-const newFriend = {
-  id: 5,
-  name: "Nick",
-  age: 27,
-  isMarried: false,
-  scores: 99
-}
-let superUserCorrect3;
 
 // И поднимаем руку!!!!
 
