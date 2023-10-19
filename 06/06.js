@@ -1,198 +1,164 @@
 const students = [
   {
+    id: 1,
     name: "Bob",
     age: 22,
     isMarried: true,
     scores: 85,
+    // к 14 задаче: friends: ["Alex", "Nick", "John", "Helen", "Ann"]
   },
   {
+    id: 2,
     name: "Alex",
     age: 21,
     isMarried: true,
     scores: 90,
   },
   {
+    id: 3,
     name: "Nick",
     age: 20,
     isMarried: false,
-    scores: 120,
+    scores: 120
   },
   {
+    id: 4,
     name: "John",
     age: 19,
     isMarried: false,
-    scores: 100,
+    scores: 100
   },
   {
+    id: 5,
     name: "Helen",
     age: 20,
     isMarried: false,
-    scores: 110,
+    scores: 110
   },
   {
+    id: 6,
     name: "Ann",
     age: 20,
     isMarried: false,
-    scores: 105,
+    scores: 105
   },
 ];
 
 const user = {
   name: "Bob",
   age: 23,
+  friends: ["Alex", "Nick", "John"]
+}
+
+const superUser = {
+  name: "Bob",
+  age: 23,
+  friends: [
+    {
+      id: 1,
+      name: "Ann",
+      age: 22,
+      isMarried: true,
+      scores: 85
+    },
+    {
+      id: 2,
+      name: "Alex",
+      age: 21,
+      isMarried: true,
+      scores: 90,
+    },
+    {
+      id: 4,
+      name: "John",
+      age: 19,
+      isMarried: false,
+      scores: 100
+    }
+  ]
+}
+// NB!!! Все преобразования выполняем иммьютабельно, если не сказано иное
+
+//1. Создайте полную (глубокую) копию объекта user
+let deepCopyUser;
+
+//2. Создайте полную (глубокую) массива students
+let deepCopyStudents;
+
+//3. Создайте полную (глубокую) копию объекта superUser
+let deepCopySuperUser;
+
+//4. Отсортируйте deepCopyStudents по успеваемости (лучший идёт первым)(sort)
+let sortedByScores;
+console.log(sortedByScores);
+
+//5. Сформируйте массив студентов, у которых 100 и более баллов (filter)
+let  bestStudents;
+console.log(bestStudents)
+
+//6. Сформируйте массив имён студентов (map)
+let studentsNames;
+console.log(studentsNames)
+
+//7. Добавьте всем студентам свойство "isStudent" со значением true (map)
+let trueStudents;
+console.log(trueStudents)
+
+//8. Nick женился. Выполните соответствующие преобразование массива
+// students (map)
+let studentsWithMarriedNick;
+console.log(studentsWithMarriedNick)
+
+// Внесите  следующие изменения в объект superUser:
+//9.Удалите объект с id=1 из массива  friends
+let superUserCorrect1;
+
+//10. поменяйте объекту с id=2 из массива  friends значение св-ва name на
+// "Donald"
+let superUserCorrect2;
+
+//11. добавьте в список друзей нового друга
+const newFriend = {
+  id: 5,
+  name: "Nick",
+  age: 27,
   isMarried: false,
-  friends: ["Alex", "Nick", "John"],
-};
-
-https://www.dev-notes.ru/articles/deep-copying-using-structured-clone/
-
-//1. Поверхностная копия student
-const copyUser = { ...user }; // Object
-console.log(user === copyUser);
-console.log(user.friends === copyUser.friends);
-
-//2. Полная (глубокая) копия student
-const deepCopyStudent = { ...user, friends: [...user.friends] };
-console.log(user === deepCopyStudent);
-console.log(user.friends === deepCopyStudent.friends);
-
-//3. Поверхностная копия students
-const copyStudents = [...students];
-slice()
-console.log(students === copyStudents);
-console.log(students[0] === copyStudents[0]);
-
-//4*. Полная (глубокая) копия students
-const deepCopyStudents = students.map((st) => ({ ...st }));
-console.log(students === deepCopyStudents);
-console.log(students[0] === deepCopyStudents[0]);
-console.log(students);
-console.log(deepCopyStudents);
-
-//Далее все преобразования выполняем не модифицируя исходный массив students
-
-//5. Отсортируйте студентов по успеваемости (лучший идёт первым)
-console.log(deepCopyStudents.sort((a, b) => b.scores - a.scores));
-//5a. Отсортируйте студентов по алфавиту
-function sortByName(a, b) {
-  switch (a.name > b.name) {
-    case true:
-      return 1;
-    case false:
-      return -1;
-    default:
-      return 0;
-  }
+  scores: 99
 }
-// const sortedByName = deepCopyStudents.sort((a, b) => a.name >= b.name ? 1 : -1);
-const sortedByName = students.sort((a, b)=> a.name.localeCompare(b.name));
-console.log(sortedByName);
+let superUserCorrect3;
 
-//6. Сформируйте массив студентов, у которых 100 и более баллов
-const bestStudents = students.filter((st) => st.scores >= 100);
-console.log(bestStudents);
+// И поднимаем руку!!!!
 
-//6a.Сформируйте массив из трёх лучших студентов
-// const topStudents = deepCopyStudents.splice(0, 3);
-// console.log(topStudents);
-// console.log(deepCopyStudents);
+//12. Найдите студента с самым высоким баллом не используя методы массивов и
+// Math.max()*
+let bestStudent;
+console.log(bestStudent)
 
-//6b. Объедините массивы deepCopyStudents и topStudents так,
-// чтоб сохранился порядок сортировки
-const newDeepCopyStudents = [...topStudents, ...deepCopyStudents];
-console.log(newDeepCopyStudents);
+//13. Найдите сумму баллов всех студентов (reduce)*
+let scoresSum;
+console.log(scoresSum)
 
-//7. Сформируйте массив холостых студентов
-const notMarriedStudents = students.filter((st) => !st.isMarried);
-console.log(notMarriedStudents);
-
-//8. Сформируйте массив имён студентов
-const studentsNames = students.map((st) => st.name);
-console.log(studentsNames);
-//8a. Сформируйте строку из имён студентов, разделённых
-// - пробелом
-// - запятой
-const nameWithSpace = studentsNames.join(" ");
-console.log(nameWithSpace);
-const namesWithComma = studentsNames.join(", ");
-console.log(namesWithComma);
-
-//9. Добавьте всем студентам свойство "isStudent" со значением true
-const trueStudents = students.map((st) => ({ ...st, isStudent: true }));
-console.log(trueStudents);
-
-//10. Nick женился. Выполните преобразование массива students
-// let studentsWithMarriedNick = students.map(st => st.name === "Nick" ? {...st, isMarried: true} : st);
-const studentsWithMarriedNick = students.map((st) => {
-  if (st.name === "Nick") {
-    return { ...st, isMarried: true };
-  }
-  return st;
-});
-console.log(studentsWithMarriedNick);
-
-//11. Найдите Студентку по имени Ann
-const ann = students.find((st) => st.name === "Ann");
-console.log(ann);
-console.log(students);
-
-//12. Найдите студента с самым высоким баллом
-const bestStudent = students.reduce((acc, st) => {
-  return acc.scores > st.scores ? acc : st;
-});
-console.log(bestStudent);
-//12a. Найдите 2 студента с самым высоким баллом 
-let bestStudent = students[0];
-let bestStudent2 = students[1];
-for (let i=1; i < students.length; i++) {
-    if (bestStudent.scores > bestStudent2.scores) {
-        if (students[i].scores > bestStudent2.scores) {
-            bestStudent2 = students[i];
-        }
-    }  else {
-        if (students[i].scores > bestStudent.scores) {
-            bestStudent = students[i];
-        }
-    }
-
+// 14. Д.З.:
+// Напишите функцию addFriends, которая принимает параметром массив students
+// и добавляет в каждому студенту свойство "friends",
+// значением которого является массив имён всех остальных студентов из массива students,
+// за исключением собственного имени студента. Т.е. в друзьях у Боба Боба быть не должно.
+const addFriends = (students) => {
+  //..............................
 }
-let best1 = students[0]
-let best2 = students[0]
-
-for (let i = 0; i < students.length; i++) {
-    if (students[i].scores > best1.scores) {
-        best1 = students[i]
-
-    } else  if (students[i].scores > best2.scores ){
-        best2 = students[i]
-    }
-
-}
-
-
-//13. Найдите сумму баллов всех студентов
-const scoresSum = students.reduce((acc, st) => acc + st.scores, 0);
-console.log(scoresSum);
-
-// 14.Напишите функцию addFriends, которая принимает параметром массив students и возвращает новый массив, при этом добавляет в каждому студенту свойство .friends, значением которого является массив имён всех остальных студентов из массива, за исключением собственного имени студента. Т.е. в друзьях у Боба Боба быть не должно.
-
-// function addFriends(students) {
-//     const studentsNames = students.map(st => st.name)
-//     function getFriendsList(student){
-//         const friendsList = studentsNames.filter(name => student.name !== name)
-//         return friendsList
-//     }
-//     const studentsWithFriends = students.map(st => {
-//         return {...st, friends: getFriendsList(st)}
-//     })
-//     return studentsWithFriends
-
-// }
-const addFriends = (sts) => {
-  return sts.map((st) => ({
-    ...st,
-    friends: sts.map((st) => st.name).filter((name) => name !== st.name),
-  }));
-};
-
 console.log(addFriends(students));
+
+// 15. Д.З.: Напишите функцию getBestStudents, которая принимает параметром
+// массив students  и количество лучших студентов, которое надо получить в
+// новом массиве. Если второго параметра нет, то по умолчанию возвращает лучшего студента
+// getBestStudents(students) => {name: "Nick", age: 20, isMarried: false, scores: 120}
+// getBestStudents(students, 3) => [{...}, {...}, {...}]
+// getBestStudents(students, 10) => [{}, {}, ...., {}, null, null, null, null ]
+
+
+
+
+
+
+
+
