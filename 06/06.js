@@ -118,6 +118,16 @@ let superUserCorrect1 = {...superUser, friends: superUser.friends.filter(el => e
 // "Donald"
 let superUserCorrect2 = {...superUser, friends: superUser.friends.map(el => el.id === 2 ? {...el, name:"Donald"}: el)}
 
+//11. добавьте в список друзей нового друга
+const newFriend = {
+  id: 5,
+  name: "Nick",
+  age: 27,
+  isMarried: false,
+  scores: 99
+}
+let superUserCorrect3 = {...superUser, friends: [...superUser.friends, newFriend]}
+console.log(superUserCorrect3)
 
 
 
