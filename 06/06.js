@@ -114,6 +114,11 @@ console.log(studentsWithMarriedNick)
 //9.Удалите объект с id=1 из массива  friends
 let superUserCorrect1 = {...superUser, friends: superUser.friends.filter(el => el.id !== 1)}
 
+//10. поменяйте объекту с id=2 из массива  friends значение св-ва name на
+// "Donald"
+let superUserCorrect2 = {...superUser, friends: superUser.friends.map(el => el.id === 2 ? {...el, name:"Donald"}: el)}
+
+
 
 
 // И поднимаем руку!!!!
