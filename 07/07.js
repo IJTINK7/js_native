@@ -2,6 +2,16 @@
 // repeatString("yo", 3, " ") => "yo yo yo"
 // repeatString("yo", 3, ",") => "yo,yo,yo"
 // for или str.repeat()
+const repeatString = (str, count, separator) => {
+  let finalStr = ""
+  for (let i = 0; i < count ; i++) {
+    finalStr = `${str}${separator}`.repeat(count-1) + str
+  }
+  return finalStr
+}
+console.log(repeatString("ho",3, "-"))
+console.log(repeatString("yo", 3, " "))
+console.log(repeatString("yo", 3, ","))
 
 //2. Реализуйте функцию, которая принимает параметром сторку и подстроку, а возвращает true, если строка начинается с указанной подстроки, в противном случае - false. Регистр не учитывается.
 // checkStart("Incubator", "inc") => true
