@@ -81,12 +81,15 @@ const superUser = {
 
 //1. Создайте полную (глубокую) копию объекта user
 let deepCopyUser = {...user, friends: [...user.friends]};
+console.log(deepCopyUser)
 
 //2. Создайте полную (глубокую) массива students
 let deepCopyStudents = students.map(el=>({...el}));
+console.log(deepCopyStudents)
 
 //3. Создайте полную (глубокую) копию объекта superUser
 let deepCopySuperUser = {... superUser, friends: superUser.friends.map(el=>({...el}))};
+console.log(deepCopySuperUser)
 
 //4. Отсортируйте deepCopyStudents по успеваемости (лучший идёт первым)(sort)
 let sortedByScores = deepCopyStudents.sort((a,b)=>b.scores - a.scores)
@@ -113,10 +116,12 @@ console.log(studentsWithMarriedNick)
 
 //9.Удалите объект с id=1 из массива  friends
 let superUserCorrect1 = {...superUser, friends: superUser.friends.filter(el => el.id !== 1)}
+console.log(superUserCorrect1)
 
 //10. поменяйте объекту с id=2 из массива  friends значение св-ва name на
 // "Donald"
 let superUserCorrect2 = {...superUser, friends: superUser.friends.map(el => el.id === 2 ? {...el, name:"Donald"}: el)}
+console.log(superUserCorrect2)
 
 //11. добавьте в список друзей нового друга
 const newFriend = {
@@ -161,9 +166,14 @@ console.log(scoresSum)
 // значением которого является массив имён всех остальных студентов из массива students,
 // за исключением собственного имени студента. Т.е. в друзьях у Боба Боба быть не должно.
 const addFriends = (students) => {
-  //..............................
+  let newArray = students.map(el=> ({...el, friends:
+      students.filter(st=> st.name !== el.name).map(st => st.name)
+    }))
+  return newArray
 }
 console.log(addFriends(students));
+
+
 
 // 15. Д.З.: Напишите функцию getBestStudents, которая принимает параметром
 // массив students  и количество лучших студентов, которое надо получить в
