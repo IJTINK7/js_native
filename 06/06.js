@@ -135,8 +135,18 @@ console.log(superUserCorrect3)
 
 //12. Найдите студента с самым высоким баллом не используя методы массивов и
 // Math.max()*
+
 let bestStudent;
-console.log(bestStudent)
+let maxScores = students[0].scores;
+for (let i = 1; i < students.length; i++) {
+  if (students[i].scores > maxScores) {
+    maxScores = students[i].scores;
+    if(students[i].scores === maxScores){
+      bestStudent = students[i].name
+    }
+  }
+}
+console.log(bestStudent);
 
 //13. Найдите сумму баллов всех студентов (reduce)*
 let scoresSum;
