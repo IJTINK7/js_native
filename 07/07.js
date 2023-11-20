@@ -40,6 +40,24 @@ console.log(truncateString("Привет! Как дела?", 11))
 // getMinLengthWord("Всем студентам инкубатора желаю удачи!") => "Всем"
 // getMinLengthWord("") => null
 // split()
+const getMinLengthWord = (str)=> {
+  if(str === ""){
+    return null
+  }else {
+    let arrStr = str.split(" ")
+    let shortestWord = arrStr[0]
+    for (let i = 1; i < arrStr.length; i++) {
+      if(arrStr[i].length < shortestWord.length){
+        shortestWord = arrStr[i]
+      }
+    }
+    return shortestWord
+  }
+}
+console.log(getMinLengthWord("Всем студентам инкубатора желаю удачи!"))
+console.log(getMinLengthWord("Привет, как у тебя дела?"))
+console.log(getMinLengthWord(""))
+
 
 //5. Реализуйте функцию, которая принимает параметром сторку (предложение) и возвращает то же предложение, где все слова написаны строчными, но начинаются с заглавных букв.
 // setUpperCase("всем стУдентам инкуБатора Желаю удачИ!") => "Всем Студентам Инкубатора Желаю Удачи!"
