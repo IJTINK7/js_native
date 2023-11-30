@@ -41,7 +41,13 @@ console.log(getTriangleType(1, 2, 13))
 // сумму цифр этого числа
 
 export function getSum(number: number): number {
-	return 123
+	let sum = 0;
+	const numberAsArray = Math.abs(number).toString().split("");
+	for (const digit of numberAsArray) {
+		const digitToNumber = parseInt(digit);
+		sum += digitToNumber;
+	}
+	return sum;
 }
 
 
