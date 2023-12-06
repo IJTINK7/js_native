@@ -114,3 +114,17 @@
 //     }
 //     callback(resolve, reject)
 // }
+const fs = require("fs")
+const readFile = (path) => {
+    return new Promise((resolve, reject)=>{
+        fs.readFile(path, (err, file)=>{
+            if (err){
+                reject(err)
+            }else{
+                resolve(file)
+            }
+        })
+    })
+}
+const pr = readFile("./index.js")
+console.log(pr)
